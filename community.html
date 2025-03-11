@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="community_title">Vision Board - 社区</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .tab-active {
+            color: #6366F1;
+            border-bottom: 2px solid #6366F1;
+        }
+        .post-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+            <h1 class="text-xl font-bold text-gray-800 mr-4" data-i18n="community">社区</h1>
+            <button class="bg-gray-200 text-gray-600 p-2 rounded-full">
+                <i class="fas fa-bell"></i>
+            </button>
+        </div>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full font-medium flex items-center shadow-md">
+            <i class="fas fa-share-alt mr-2"></i>
+            <span data-i18n="share">分享</span>
+        </button>
+    </header>
+
+    <div class="px-4 pt-4">
+        <div class="flex space-x-6 border-b border-gray-200 pb-3 mb-6 overflow-x-auto whitespace-nowrap">
+            <button class="tab-active px-1 py-2 font-medium text-sm" data-i18n="discover">发现</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="following">关注</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="trending">热门</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="success_stories">成功故事</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="challenges">挑战</button>
+        </div>
+
+        <!-- Featured Challenge -->
+        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-5 mb-6 relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 opacity-20">
+                <i class="fas fa-trophy text-9xl"></i>
+            </div>
+            <div class="relative">
+                <span class="inline-block px-2 py-1 bg-white bg-opacity-30 rounded-full text-xs text-white mb-3" data-i18n="featured_challenge">精选挑战</span>
+                <h2 class="text-white font-bold text-xl mb-2" data-i18n="thirty_day_challenge">30天愿望显化挑战</h2>
+                <p class="text-white text-opacity-90 mb-4" data-i18n="challenge_description">每天坚持查看您的愿望板并记录进度，30天后见证神奇的改变！</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-indigo-500">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-indigo-500">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-indigo-500">
+                        </div>
+                        <span class="ml-2 text-white text-sm" data-i18n="participants">1,458人正在参与</span>
+                    </div>
+                    <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium" data-i18n="join_challenge">加入挑战</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Posts -->
+        <h2 class="text-lg font-bold text-gray-800 mb-4" data-i18n="community_shares">社区分享</h2>
+        
+        <div class="space-y-6 mb-20">
+            <!-- Post 1 -->
+            <div class="post-card bg-white transition-all duration-300">
+                <div class="p-4">
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">张小萱</h3>
+                            <p class="text-gray-500 text-xs">2小时前</p>
+                        </div>
+                        <button class="ml-auto text-gray-400">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-800 mb-3" data-i18n="post1_content">终于完成了我的职业愿望板！每天看着它，我都充满动力去追求理想中的工作。感谢这个平台让我找到了方向！#职业目标 #愿望显化</p>
+                    <div class="rounded-lg overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Career Vision Board" class="w-full">
+                    </div>
+                    <div class="flex justify-between text-gray-500 text-sm">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center">
+                                <i class="far fa-heart mr-1"></i>
+                                <span>128</span>
+                            </button>
+                            <button class="flex items-center">
+                                <i class="far fa-comment mr-1"></i>
+                                <span>24</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-card bg-white transition-all duration-300">
+                <div class="p-4">
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">李明远</h3>
+                            <p class="text-gray-500 text-xs">昨天</p>
+                        </div>
+                        <button class="ml-auto text-gray-400">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-800 mb-3" data-i18n="post2_content">30天挑战第15天！坚持每天观看我的旅行愿望板，已经开始计划今年夏天的欧洲之行了。显化的力量真的很神奇！#旅行愿望 #30天挑战</p>
+                    <div class="rounded-lg overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Travel Vision Board" class="w-full">
+                    </div>
+                    <div class="flex justify-between text-gray-500 text-sm">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center text-red-500">
+                                <i class="fas fa-heart mr-1"></i>
+                                <span>256</span>
+                            </button>
+                            <button class="flex items-center">
+                                <i class="far fa-comment mr-1"></i>
+                                <span>42</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center">
+                            <i class="fas fa-bookmark text-indigo-600"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-card bg-white transition-all duration-300">
+                <div class="p-4">
+                    <div class="flex items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="User" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">王佳琪</h3>
+                            <p class="text-gray-500 text-xs">3天前</p>
+                        </div>
+                        <button class="ml-auto text-gray-400">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </button>
+                    </div>
+                    <p class="text-gray-800 mb-3" data-i18n="post3_content">想分享一个好消息！我在愿望板上设定的减重目标达成了！六个月从140斤到108斤，感谢这个平台让我保持专注和动力！#健康目标 #目标达成</p>
+                    <div class="grid grid-cols-2 gap-2 rounded-lg overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Before" class="w-full h-40 object-cover">
+                        <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="After" class="w-full h-40 object-cover">
+                    </div>
+                    <div class="flex justify-between text-gray-500 text-sm">
+                        <div class="flex space-x-4">
+                            <button class="flex items-center">
+                                <i class="far fa-heart mr-1"></i>
+                                <span>342</span>
+                            </button>
+                            <button class="flex items-center">
+                                <i class="far fa-comment mr-1"></i>
+                                <span>78</span>
+                            </button>
+                        </div>
+                        <button class="flex items-center">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center px-2 py-3">
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="home">主页</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-indigo-600">
+            <i class="fas fa-globe text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="community">社区</span>
+        </a>
+        <a href="#" class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center -mt-5 shadow-lg">
+                <i class="fas fa-plus text-white text-xl"></i>
+            </div>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-chart-line text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="progress">进度</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="profile">我的</span>
+        </a>
+    </nav>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="progress_title">Vision Board - 进度</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .tab-active {
+            color: #6366F1;
+            border-bottom: 2px solid #6366F1;
+        }
+        .progress-circle {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+        }
+        .progress-circle svg {
+            transform: rotate(-90deg);
+        }
+        .progress-circle circle {
+            fill: transparent;
+            stroke-width: 8;
+        }
+        .progress-circle .progress-bg {
+            stroke: #E5E7EB;
+        }
+        .progress-circle .progress-bar {
+            stroke: #6366F1;
+            stroke-linecap: round;
+        }
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .streak-day {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .streak-day.active {
+            background-color: #6366F1;
+            color: white;
+        }
+        .streak-day.today {
+            border: 2px solid #6366F1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+            <h1 class="text-xl font-bold text-gray-800 mr-4" data-i18n="progress_tracking">进度跟踪</h1>
+            <button class="bg-gray-200 text-gray-600 p-2 rounded-full">
+                <i class="fas fa-calendar-alt"></i>
+            </button>
+        </div>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full font-medium flex items-center shadow-md">
+            <i class="fas fa-plus mr-2"></i>
+            <span data-i18n="set_goal">设定目标</span>
+        </button>
+    </header>
+
+    <div class="px-4 pt-4">
+        <!-- Overall Progress -->
+        <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <h2 class="text-lg font-bold text-gray-800 mb-4" data-i18n="monthly_progress">本月显化进度</h2>
+            <div class="flex items-center justify-center mb-4">
+                <div class="progress-circle">
+                    <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r="54" class="progress-bg"></circle>
+                        <circle cx="60" cy="60" r="54" class="progress-bar" stroke-dasharray="339.292" stroke-dashoffset="101.7876"></circle>
+                    </svg>
+                    <div class="progress-text">
+                        <div class="text-3xl font-bold text-indigo-600">70%</div>
+                        <div class="text-sm text-gray-500" data-i18n="completed">已完成</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+                <div>
+                    <div class="text-xl font-bold text-gray-800">21</div>
+                    <div class="text-sm text-gray-500" data-i18n="practice_days">练习天数</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-gray-800">8</div>
+                    <div class="text-sm text-gray-500" data-i18n="active_boards">活跃愿望板</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-indigo-600">5</div>
+                    <div class="text-sm text-gray-500" data-i18n="achieved_goals">已实现目标</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Streak -->
+        <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-bold text-gray-800" data-i18n="current_streak">当前连续天数</h2>
+                <span class="text-lg font-bold text-indigo-600">14天</span>
+            </div>
+            <div class="flex justify-between mb-2">
+                <div class="streak-day">
+                    <span data-i18n="mon_short">一</span>
+                </div>
+                <div class="streak-day active">
+                    <span data-i18n="tue_short">二</span>
+                </div>
+                <div class="streak-day active">
+                    <span data-i18n="wed_short">三</span>
+                </div>
+                <div class="streak-day active">
+                    <span data-i18n="thu_short">四</span>
+                </div>
+                <div class="streak-day active">
+                    <span data-i18n="fri_short">五</span>
+                </div>
+                <div class="streak-day active">
+                    <span data-i18n="sat_short">六</span>
+                </div>
+                <div class="streak-day today">
+                    <span data-i18n="sun_short">日</span>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium">
+                    <i class="fas fa-check-circle mr-1"></i>
+                    <span data-i18n="mark_today">标记今日完成</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Goals Progress -->
+        <h2 class="text-lg font-bold text-gray-800 mb-4" data-i18n="your_goals">您的目标</h2>
+        
+        <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-gray-800" data-i18n="career_advancement">职业晋升</h3>
+                    <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full" data-i18n="on_track">进展顺利</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="goal_description1">每天查看职业愿望板，完成3个提升技能的行动项</p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="flex justify-between mt-2 text-sm">
+                    <span>85%</span>
+                    <span data-i18n="days_left">剩余5天</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md mb-4 overflow-hidden">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-gray-800" data-i18n="fitness_goal">健身目标</h3>
+                    <span class="text-sm bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full" data-i18n="needs_attention">需要关注</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="goal_description2">每天锻炼30分钟，查看健身愿望板来保持动力</p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 45%"></div>
+                </div>
+                <div class="flex justify-between mt-2 text-sm">
+                    <span>45%</span>
+                    <span data-i18n="days_left_longer">剩余12天</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md mb-20 overflow-hidden">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-gray-800" data-i18n="travel_planning">旅行计划</h3>
+                    <span class="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full" data-i18n="in_progress">进行中</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3" data-i18n="goal_description3">每周查看3次旅行愿望板，完成旅行预算和行程规划</p>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 60%"></div>
+                </div>
+                <div class="flex justify-between mt-2 text-sm">
+                    <span>60%</span>
+                    <span data-i18n="days_left_medium">剩余8天</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center px-2 py-3">
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="home">主页</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-search text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="explore">探索</span>
+        </a>
+        <a href="#" class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center -mt-5 shadow-lg">
+                <i class="fas fa-plus text-white text-xl"></i>
+            </div>
+        </a>
+        <a href="#" class="flex flex-col items-center text-indigo-600">
+            <i class="fas fa-chart-line text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="progress">进度</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="profile">我的</span>
+        </a>
+    </nav>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+

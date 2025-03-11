@@ -1,132 +1,778 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="keywords" content="mobile, simulator, mobile design, mobile app">
-  <meta name="author" content="Your Name or Company">
-  <meta http-equiv="Content-Language" content="en">
-
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://www.yourwebsite.com/pc-simulator" />
-
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="PC Simulator">
-  <meta property="og:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta property="og:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta property="og:url" content="https://www.yourwebsite.com/pc-simulator">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PC Simulator">
-  <meta name="twitter:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="twitter:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y) {
-      window.clarity=window.clarity||function(){(clarity.q=clarity.q||[]).push(arguments)};
-      clarity('set', 'anonymizeIP', true);
-      i=l.createElement('script');i.async=1;i.src=r;i.type='text/javascript';
-      t=l.getElementsByTagName('script')[0];t.parentNode.insertBefore(i,t);
-    })(document,window,'script','https://www.clarity.ms/tag/XXXXXX');
-  </script>
-
-  <title>PC Simulator</title>
-
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .mobile-container {
-      width: 360px;
-      height: 640px;
-      border: 16px solid black;
-      border-radius: 16px;
-      background-color: #fff;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .content {
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    /* Adjustments for PC */
-    @media (min-width: 768px) {
-      .mobile-container {
-        width: 600px;
-        height: 1000px;
-      }
-
-      .content {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .mobile-container {
-        width: 800px;
-        height: 1400px;
-      }
-
-      .content {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* Additional responsiveness for larger screens */
-    @media (min-width: 1200px) {
-      body {
-        justify-content: flex-start;
-      }
-
-      .mobile-container {
-        margin-top: 50px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app_title">显化方法Vision Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366F1 0%, #A78BFA 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366F1 0%, #A78BFA 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .animated-element {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .phone-mockup {
+            position: relative;
+            width: 280px;
+            height: 580px;
+            background: #000;
+            border-radius: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            padding: 12px;
+            margin: 0 auto;
+        }
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .status-bar {
+            height: 44px;
+            background: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            color: white;
+            font-size: 12px;
+        }
+        .accordion-header {
+            cursor: pointer;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.active {
+            max-height: 1000px;
+        }
+    </style>
 </head>
-
-<body>
-  <div class="mobile-container">
-    <div class="content">
-      <p>Mobile Simulator Screen</p>
-      <p>PC Version: Adjusted for larger screens.</p>
+<body class="bg-gray-50">
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50">
+        <select id="language-selector" class="bg-white border border-gray-300 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <option value="zh">中文</option>
+            <option value="en">English</option>
+        </select>
     </div>
-  </div>
-</body>
 
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animated-element">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="hero_title">告别梦想停留在脑海，迎接愿望成真的喜悦 - Vision Board助您轻松实现目标！</h1>
+                    <h2 class="text-xl md:text-2xl mb-8" data-i18n="hero_subtitle">创建个性化的愿望视觉板，激发潜意识，加速目标实现。每天5分钟，让显化不再是神秘概念，而是触手可及的现实。</h2>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#waiting-list" class="btn-primary text-center px-8 py-3 rounded-lg font-semibold text-lg" data-i18n="hero_cta_primary">开启您的愿望显化之旅</a>
+                        <a href="#features" class="bg-white text-indigo-600 text-center px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition" data-i18n="hero_cta_secondary">了解更多功能</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animated-element">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522159698025-056d0c8d4a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vision Board App Preview" class="rounded-xl shadow-2xl" style="width: 300px;">
+                        <div class="absolute inset-0 bg-indigo-600 bg-opacity-20 rounded-xl flex items-center justify-center">
+                            <button class="bg-white text-indigo-600 rounded-full p-4 shadow-lg hover:shadow-xl transition">
+                                <i class="fas fa-play text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Frustrated person" class="rounded-lg shadow-lg">
+                        <div class="absolute top-0 left-0 w-full h-full bg-red-500 bg-opacity-20 rounded-lg flex items-center justify-center">
+                            <h3 class="text-white text-xl font-bold px-4 py-2 bg-red-500 rounded" data-i18n="problem_label">问题</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800" data-i18n="problem_title">还在为梦想无法实现而困扰？你不是一个人！</h2>
+                    <p class="text-gray-600 mb-8" data-i18n="problem_description">在忙碌的生活中，我们的愿望和目标往往被淹没在日常琐事中。零散的心愿清单不仅难以坚持，更阻碍您实现真正的愿望。研究表明，目标仅靠文字记录的实现率不足30%，而通过视觉呈现则提高到了惊人的80%以上！</p>
+                    
+                    <div class="mt-10 relative">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Happy person with vision board" class="rounded-lg shadow-lg">
+                        <div class="absolute top-0 left-0 w-full h-full bg-green-500 bg-opacity-20 rounded-lg flex items-center justify-center">
+                            <h3 class="text-white text-xl font-bold px-4 py-2 bg-green-500 rounded" data-i18n="solution_label">解决方案</h3>
+                        </div>
+                    </div>
+                    <h2 class="text-3xl font-bold mt-8 mb-4 text-gray-800" data-i18n="solution_title">Vision Board - 释放潜意识的愿望显化工具</h2>
+                    <p class="text-gray-600 mb-6" data-i18n="solution_description">Vision Board应用为您量身打造，一键解决目标难以实现的痛点，让您轻松创建个性化的视觉愿望板。通过强大的多媒体功能、科学的显化方法和便捷的进度跟踪，提升愿望实现率高达300%，让梦想不再只是梦想。</p>
+                    <a href="#features" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold" data-i18n="solution_cta">探索核心功能</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="features_title">核心功能：让愿望显化变得轻松有趣</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="features_subtitle">我们精心设计的功能，让您在日常生活中轻松进行愿望显化练习，提升目标实现率。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="feature1_title">场景一：灵感迸发 - 个性化创建功能</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="feature1_description">丰富的模板、素材库和自定义设计工具，让您轻松创建专属的Vision Board，无需设计基础，也能做出专业效果。</p>
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vision Board Creation" class="w-full h-48 object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <a href="#" class="text-indigo-600 font-semibold flex items-center">
+                        <span data-i18n="feature_learn_more">了解更多</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-film text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="feature2_title">场景二：沉浸体验 - 多媒体显化功能</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="feature2_description">结合图片、文字、音乐和语音，创造沉浸式的显化体验，让您的潜意识更容易接受愿望，加速目标实现。</p>
+                    <div class="rounded-lg overflow-hidden mb-4 relative">
+                        <img src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Multimedia Experience" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-white rounded-full p-3 shadow-md">
+                                <i class="fas fa-play text-purple-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="text-purple-600 font-semibold flex items-center">
+                        <span data-i18n="feature_learn_more">了解更多</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800" data-i18n="feature3_title">场景三：持续成长 - 进度跟踪功能</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="feature3_description">设定显化目标，记录每日练习，查看进度统计，让您能直观感受显化的效果，保持积极的显化习惯。</p>
+                    <div class="rounded-lg overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Progress Tracking" class="w-full h-48 object-cover transition duration-300 transform hover:scale-105">
+                    </div>
+                    <a href="#" class="text-blue-600 font-semibold flex items-center">
+                        <span data-i18n="feature_learn_more">了解更多</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#app-preview" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold" data-i18n="features_cta">查看应用界面</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-20 bg-indigo-900 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="value_title">Vision Board - 愿望成真的终极助手！</h2>
+            <p class="text-xl text-center mb-16 max-w-3xl mx-auto opacity-90" data-i18n="value_subtitle">我们致力于帮助每一位用户在目标实现领域取得突破，效率提升300%，让您在最短时间内看到实际成果。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-indigo-800 bg-opacity-50 rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4 text-indigo-300">80%</div>
+                    <p class="text-lg" data-i18n="value_stat1">的用户在使用3个月后实现了至少一个重要目标</p>
+                </div>
+                <div class="bg-indigo-800 bg-opacity-50 rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4 text-indigo-300">5倍</div>
+                    <p class="text-lg" data-i18n="value_stat2">提升目标清晰度，让您更专注于重要事项</p>
+                </div>
+                <div class="bg-indigo-800 bg-opacity-50 rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4 text-indigo-300">95%</div>
+                    <p class="text-lg" data-i18n="value_stat3">的用户表示心态更积极，生活满意度显著提升</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#waiting-list" class="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition" data-i18n="value_cta">立即加入等待列表</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof/Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="testimonials_title">超过10,000用户的共同选择！</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="testimonials_subtitle">来自各行各业的用户通过Vision Board实现了人生目标，听听他们怎么说。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">李梦琪</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-i18n="testimonial1">"使用Vision Board三个月，我顺利获得了梦想中的工作offer！每天花5分钟看我的职业愿景板，潜移默化中让我更加自信，面试表现超常发挥。强烈推荐给所有想要在职场突破的朋友！"</p>
+                    <p class="text-gray-400 text-sm">设计师 | 上海</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">王健</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-i18n="testimonial2">"最初我对显化持怀疑态度，但这个应用改变了我的看法。我创建了一个健康愿景板，每天坚持查看，六个月后成功减重15公斤！应用中的进度跟踪功能特别有用，让我保持了动力。"</p>
+                    <p class="text-gray-400 text-sm">软件工程师 | 北京</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-gray-50 rounded-xl p-8 shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">陈美玲</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-i18n="testimonial3">"这是我用过的最好的显化工具！多媒体功能太棒了，我可以添加音乐和录制旁白，让整个显化过程更加沉浸。一年来，我实现了环游欧洲的梦想，现在正在用它规划我的创业计划。"</p>
+                    <p class="text-gray-400 text-sm">自由撰稿人 | 广州</p>
+                </div>
+            </div>
+            
+            <!-- Media mentions and awards -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Forbes_logo.svg/180px-Forbes_logo.svg.png" alt="Forbes" class="h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Wired_logo.svg/280px-Wired_logo.svg.png" alt="Wired" class="h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Cnn.svg/300px-Cnn.svg.png" alt="CNN" class="h-8">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/The_Wall_Street_Journal_Logo.svg/420px-The_Wall_Street_Journal_Logo.svg.png" alt="WSJ" class="h-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="how_it_works_title">简单易用，三步上手！</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="how_it_works_subtitle">Vision Board应用简化了显化过程，让每个人都能轻松开始愿望显化之旅。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">1</div>
+                    <div class="text-center pt-8">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Choose template" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800" data-i18n="step1_title">选择模板或自定义创建</h3>
+                        <p class="text-gray-600" data-i18n="step1_description">从多种精美模板中选择，或从零开始创建属于您的Vision Board，拖放元素，完全自由定制。</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">2</div>
+                    <div class="text-center pt-8">
+                        <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Personalize board" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800" data-i18n="step2_title">个性化您的愿景板</h3>
+                        <p class="text-gray-600" data-i18n="step2_description">添加图片、文字、音乐和语音旁白，打造沉浸式的显化体验，让愿望更加生动具体。</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg relative">
+                    <div class="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-xl absolute -top-6 left-1/2 transform -translate-x-1/2">3</div>
+                    <div class="text-center pt-8">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Daily practice" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800" data-i18n="step3_title">每日练习，跟踪进度</h3>
+                        <p class="text-gray-600" data-i18n="step3_description">设定提醒，每天查看您的Vision Board，记录显化效果，见证愿望一步步实现。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#waiting-list" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold" data-i18n="how_it_works_cta">开始我的显化之旅</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section id="app-preview" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="app_preview_title">抢先预览 - Vision Board核心功能一览</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="app_preview_subtitle">滑动浏览，发现Vision Board如何助您实现愿望，让显化过程变得简单有趣。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Home Screen -->
+                <div>
+                    <div class="phone-mockup">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div>
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi ml-1"></i>
+                                <i class="fas fa-battery-full ml-1"></i>
+                            </div>
+                        </div>
+                        <div class="phone-screen">
+                            <iframe src="home.html" frameborder="0" width="100%" height="530"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-center text-xl font-semibold mt-6 text-gray-800" data-i18n="screen_home">主页界面</h3>
+                </div>
+                
+                <!-- Create Screen -->
+                <div>
+                    <div class="phone-mockup">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div>
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi ml-1"></i>
+                                <i class="fas fa-battery-full ml-1"></i>
+                            </div>
+                        </div>
+                        <div class="phone-screen">
+                            <iframe src="create.html" frameborder="0" width="100%" height="530"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-center text-xl font-semibold mt-6 text-gray-800" data-i18n="screen_create">创建界面</h3>
+                </div>
+                
+                <!-- Progress Screen -->
+                <div>
+                    <div class="phone-mockup">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div>
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi ml-1"></i>
+                                <i class="fas fa-battery-full ml-1"></i>
+                            </div>
+                        </div>
+                        <div class="phone-screen">
+                            <iframe src="progress.html" frameborder="0" width="100%" height="530"></iframe>
+                        </div>
+                    </div>
+                    <h3 class="text-center text-xl font-semibold mt-6 text-gray-800" data-i18n="screen_progress">进度跟踪界面</h3>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition" data-i18n="app_preview_cta">体验完整App Demo - Vision Board功能全貌抢先看！</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waiting List Section -->
+    <section id="waiting-list" class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4" data-i18n="waiting_list_title">抢先体验内测资格，赢在起跑线！</h2>
+            <p class="text-xl text-center mb-12 max-w-3xl mx-auto" data-i18n="waiting_list_subtitle">加入Vision Board独家内测等待列表，第一时间获取内测邀请码、限量福利和专属优惠！名额有限，立即加入！</p>
+            
+            <div class="max-w-md mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-md rounded-xl p-8 shadow-lg">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-1" data-i18n="form_name">姓名</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-white placeholder-opacity-60" placeholder="请输入您的姓名" data-i18n-placeholder="form_name_placeholder">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1" data-i18n="form_email">电子邮箱</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-white placeholder-opacity-60" placeholder="请输入您的电子邮箱" required data-i18n-placeholder="form_email_placeholder">
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium mb-1" data-i18n="form_interest">您对哪些功能最感兴趣？</label>
+                        <select id="interest" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white text-white">
+                            <option value="" disabled selected data-i18n="form_interest_placeholder">请选择...</option>
+                            <option value="create" data-i18n="form_interest_option1">创建Vision Board</option>
+                            <option value="multimedia" data-i18n="form_interest_option2">多媒体功能</option>
+                            <option value="tracking" data-i18n="form_interest_option3">进度跟踪</option>
+                            <option value="community" data-i18n="form_interest_option4">社区互动</option>
+                            <option value="all" data-i18n="form_interest_option5">所有功能</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-white text-indigo-600 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition" data-i18n="form_submit">立即加入等待列表</button>
+                    </div>
+                    <p class="text-sm text-center opacity-80" data-i18n="form_privacy">提交即表示您同意我们的隐私政策和服务条款</p>
+                </form>
+                
+                <div class="mt-8 pt-6 border-t border-white border-opacity-20">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="flex -space-x-2">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" class="w-8 h-8 rounded-full border-2 border-white">
+                            </div>
+                            <span class="ml-2 text-sm" data-i18n="waiting_list_count">已有483人加入</span>
+                        </div>
+                        <div class="text-sm">
+                            <i class="fas fa-clock"></i>
+                            <span class="ml-1" data-i18n="waiting_list_time">内测即将开始</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Video Stream Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="youtube_title">用户真实案例 - 看Vision Board如何助力用户实现目标</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="youtube_subtitle">这些视频将帮助您了解如何有效使用Vision Board进行愿望显化，快速提升成果。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative pb-56.25">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800" data-i18n="youtube_video1_title">Vision Board入门指南</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="youtube_video1_description">了解如何创建您的第一个愿望板，掌握显化的基本原理和技巧。</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative pb-56.25">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800" data-i18n="youtube_video2_title">职业目标显化指南</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="youtube_video2_description">专注于如何使用Vision Board实现职业目标，提升工作效率和满意度。</p>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="relative pb-56.25">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800" data-i18n="youtube_video3_title">用户成功故事分享</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="youtube_video3_description">真实用户分享他们使用Vision Board实现愿望的经历和心得。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="text-indigo-600 font-semibold flex items-center justify-center">
+                    <span data-i18n="youtube_more">查看更多视频</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Twitter Feed Stream Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="twitter_title">用户口碑 - Twitter实时热议Vision Board的强大功能</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="twitter_subtitle">看看用户们如何评价Vision Board，分享他们的显化成果和体验。</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tweet 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Twitter User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">张小萱 @xiaoxuan</h4>
+                            <p class="text-gray-500 text-sm">2小时前</p>
+                        </div>
+                        <div class="ml-auto text-blue-400">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4" data-i18n="tweet1">刚使用@VisionBoardApp一个月，已经实现了我的第一个小目标！创建愿望板的过程很治愈，每天看着它给我带来动力和方向感。强烈推荐给迷茫的朋友们！#显化方法 #愿望成真</p>
+                    <div class="flex text-gray-500 text-sm">
+                        <div class="mr-4"><i class="far fa-heart"></i> 45</div>
+                        <div class="mr-4"><i class="far fa-comment"></i> 3</div>
+                        <div><i class="far fa-share-square"></i> 12</div>
+                    </div>
+                </div>
+                
+                <!-- Tweet 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Twitter User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">李明远 @mylee</h4>
+                            <p class="text-gray-500 text-sm">昨天</p>
+                        </div>
+                        <div class="ml-auto text-blue-400">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4" data-i18n="tweet2">@VisionBoardApp真是改变人生的应用！我一直想要环游世界，在愿望板上放了一年，现在已经去了5个国家！多媒体功能超赞，每次加入新照片都特别有成就感。#旅行梦想 #显化成功</p>
+                    <div class="flex text-gray-500 text-sm">
+                        <div class="mr-4"><i class="far fa-heart"></i> 78</div>
+                        <div class="mr-4"><i class="far fa-comment"></i> 8</div>
+                        <div><i class="far fa-share-square"></i> 21</div>
+                    </div>
+                </div>
+                
+                <!-- Tweet 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Twitter User" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-800">王佳琪 @jiaqiwang</h4>
+                            <p class="text-gray-500 text-sm">3天前</p>
+                        </div>
+                        <div class="ml-auto text-blue-400">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4" data-i18n="tweet3">感谢@VisionBoardApp的灵感库功能！选择素材超方便，让我节省了很多寻找图片的时间。最喜欢进度跟踪功能，看到自己每天坚持的记录特别有成就感！#目标管理 #效率提升</p>
+                    <div class="flex text-gray-500 text-sm">
+                        <div class="mr-4"><i class="far fa-heart"></i> 32</div>
+                        <div class="mr-4"><i class="far fa-comment"></i> 5</div>
+                        <div><i class="far fa-share-square"></i> 7</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold" data-i18n="twitter_cta">关注我们 @VisionBoardApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-gray-800" data-i18n="faq_title">常见问题</h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-i18n="faq_subtitle">以下是用户最常问的问题，如果您有其他疑问，请随时联系我们。</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="mb-6 bg-white rounded-xl shadow overflow-hidden">
+                    <div class="accordion-header p-6 flex justify-between items-center bg-white">
+                        <h3 class="font-bold text-lg text-gray-800" data-i18n="faq1_question">Vision Board如何帮我实现愿望？</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600" data-i18n="faq1_answer">Vision Board通过视觉化的方式激活您的潜意识，使您的大脑更容易接受并相信目标是可实现的。科学研究表明，视觉化目标可以增强专注力、提高动力，并帮助您识别实现目标的机会。我们的应用融合了图像、文字、音乐和进度跟踪等功能，全方位提升显化效果，让您的愿望更容易实现。</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="mb-6 bg-white rounded-xl shadow overflow-hidden">
+                    <div class="accordion-header p-6 flex justify-between items-center bg-white">
+                        <h3 class="font-bold text-lg text-gray-800" data-i18n="faq2_question">Vision Board有哪些核心功能？</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600" data-i18n="faq2_answer">我们的应用包含三大核心功能模块：1) 创建和编辑功能，包括多种模板、自定义设计、丰富素材库；2) 多媒体功能，支持添加背景音乐、语音旁白和视频生成；3) 进度跟踪功能，记录每日练习，设定目标，发送提醒。此外，还有社区分享、灵感库等辅助功能，让您的显化之旅更加丰富多彩。</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="mb-6 bg-white rounded-xl shadow overflow-hidden">
+                    <div class="accordion-header p-6 flex justify-between items-center bg-white">
+                        <h3 class="font-bold text-lg text-gray-800" data-i18n="faq3_question">Vision Board是否适合完全没有显化经验的新手？</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600" data-i18n="faq3_answer">绝对适合！Vision Board专为各类用户设计，特别友好新手。应用提供详细的新手引导、丰富的模板和素材，让您无需任何显化经验就能快速开始。我们还提供显化教程和技巧分享，帮助您逐步掌握显化方法。许多用户反馈，使用我们的应用是他们接触显化的最佳入门方式。</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="mb-6 bg-white rounded-xl shadow overflow-hidden">
+                    <div class="accordion-header p-6 flex justify-between items-center bg-white">
+                        <h3 class="font-bold text-lg text-gray-800" data-i18n="faq4_question">Vision Board的定价如何？是否有免费版本？</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600" data-i18n="faq4_answer">Vision Board采用灵活的定价模式，提供免费版和高级版两种选择。免费版包含基础的创建和编辑功能，足以满足日常显化需求。高级版每月仅需28元，解锁全部高级功能，包括多媒体功能、无限素材、进度分析等。我们还为年付用户提供30%的折扣，并为早期加入等待列表的用户提供额外优惠。</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="mb-6 bg-white rounded-xl shadow overflow-hidden">
+                    <div class="accordion-header p-6 flex justify-between items-center bg-white">
+                        <h3 class="font-bold text-lg text-gray-800" data-i18n="faq5_question">需要多长时间才能看到显化效果？</h3>
+                        <i class="fas fa-chevron-down text-indigo-600"></i>
+                    </div>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600" data-i18n="faq5_answer">显化效果因人而异，取决于目标类型、显化频率和个人因素。根据用户数据，83%的用户在持续使用30天后开始注意到积极变化，如思维方式改变、行动力提升等。对于具体目标，小目标通常在1-3个月内实现，而大目标可能需要6个月或更长时间。关键在于保持每日练习的习惯，我们的提醒功能可以帮助您坚持。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20 bg-indigo-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-i18n="final_cta_title">准备好开始您的显化之旅了吗？</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto" data-i18n="final_cta_subtitle">加入成千上万已经实现愿望的用户行列，让Vision Board助您将梦想变为现实。</p>
+            <a href="#waiting-list" class="bg-white text-indigo-600 px-10 py-4 rounded-lg font-bold text-xl hover:bg-gray-100 transition inline-block" data-i18n="final_cta_button">立即加入等待列表</a>
+            <p class="mt-8 text-indigo-200" data-i18n="final_cta_note">限时优惠：前100名加入者可获得3个月高级版免费使用权</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4" data-i18n="footer_about_title">关于我们</h3>
+                    <p class="mb-4" data-i18n="footer_about_text">Vision Board致力于将显化方法普及化、简单化，帮助每个人实现自己的愿望和目标。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4" data-i18n="footer_features_title">功能</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_features_link1">创建Vision Board</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_features_link2">多媒体功能</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_features_link3">进度跟踪</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_features_link4">社区互动</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_features_link5">灵感库</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4" data-i18n="footer_resources_title">资源</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_resources_link1">显化指南</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_resources_link2">用户故事</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_resources_link3">常见问题</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_resources_link4">博客</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_resources_link5">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4" data-i18n="footer_legal_title">法律信息</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_legal_link1">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_legal_link2">服务条款</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_legal_link3">退款政策</a></li>
+                        <li><a href="#" class="hover:text-white transition" data-i18n="footer_legal_link4">Cookie政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p data-i18n="footer_copyright">© 2023 Vision Board. 保留所有权利。</p>
+                <div class="mt-4 md:mt-0">
+                    <select id="language-selector-footer" class="bg-gray-800 border border-gray-700 rounded-md px-3 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-300">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        // 手风琴功能
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+                const icon = header.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 语言选择器同步
+        document.getElementById('language-selector-footer').addEventListener('change', function() {
+            document.getElementById('language-selector').value = this.value;
+            changeLanguage(this.value);
+        });
+
+        document.getElementById('language-selector').addEventListener('change', function() {
+            document.getElementById('language-selector-footer').value = this.value;
+            changeLanguage(this.value);
+        });
+    </script>
+</body>
 </html>
