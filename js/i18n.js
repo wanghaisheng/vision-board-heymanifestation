@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 默认语言
+    // Default language
     let currentLanguage = localStorage.getItem('language') || 'zh';
     
-    // 初始化语言选择器
+    // Initialize language selector if it exists
     if (document.getElementById('language-selector')) {
         document.getElementById('language-selector').value = currentLanguage;
     }
@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('language-selector-footer').value = currentLanguage;
     }
     
-    // 加载语言文件并应用
+    // Load language file and apply translations
     changeLanguage(currentLanguage);
     
-    // 添加事件监听器给语言选择器
+    // Add event listeners to language selectors
     if (document.getElementById('language-selector')) {
         document.getElementById('language-selector').addEventListener('change', function() {
             changeLanguage(this.value);
@@ -28,18 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 切换语言的函数
+// Function to change language
 function changeLanguage(lang) {
     fetch(`lang/${lang}.json`)
         .then(response => response.json())
         .then(data => {
-            // 存储当前语言设置
+            // Store current language setting
             localStorage.setItem('language', lang);
             
-            // 应用翻译
+            // Apply translations
             applyTranslations(data);
             
-            // 更新HTML lang属性
+            // Update HTML lang attribute
             document.documentElement.lang = lang;
         })
         .catch(error => {
@@ -47,9 +47,9 @@ function changeLanguage(lang) {
         });
 }
 
-// 应用翻译到页面元素
+// Apply translations to page elements
 function applyTranslations(translations) {
-    // 处理所有带有data-i18n属性的元素
+    // Process all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
         if (translations[key]) {
@@ -57,7 +57,7 @@ function applyTranslations(translations) {
         }
     });
     
-    // 处理所有带有data-i18n-placeholder属性的input元素
+    // Process all input elements with data-i18n-placeholder attribute
     document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
         const key = element.getAttribute('data-i18n-placeholder');
         if (translations[key]) {
@@ -65,9 +65,8 @@ function applyTranslations(translations) {
         }
     });
     
-    // 处理HTML标题
+    // Update HTML title
     if (translations.app_title) {
         document.title = translations.app_title;
     }
 }
-
