@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profile Center - Manage your Vision Board account, subscriptions, and privacy settings.">
+    <title data-i18n="profile_title">Vision Board - 个人中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .tab-active {
+            color: #6366F1;
+            border-bottom: 2px solid #6366F1;
+        }
+        .achievement-badge {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366F1 0%, #A78BFA 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+        <h1 class="text-xl font-bold text-gray-800" data-i18n="profile">个人中心</h1>
+        <button class="bg-gray-200 text-gray-600 p-2 rounded-full">
+            <i class="fas fa-cog"></i>
+        </button>
+    </header>
+
+    <div class="px-4 pt-4">
+        <!-- Profile Info -->
+        <div class="bg-white rounded-xl p-6 shadow-md mb-6 text-center">
+            <div class="relative mx-auto w-24 h-24 mb-4">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User profile avatar" class="w-full h-full rounded-full object-cover">
+                <button class="absolute bottom-0 right-0 bg-indigo-600 text-white p-1 rounded-full">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <h2 class="text-xl font-bold text-gray-800 mb-1">李梦琪</h2>
+            <p class="text-gray-500 mb-4" data-i18n="member_since">会员自 2023年1月</p>
+            <div class="flex justify-center space-x-4">
+                <div class="text-center">
+                    <div class="text-xl font-bold text-gray-800">125</div>
+                    <div class="text-sm text-gray-500" data-i18n="practice_days">练习天数</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold text-gray-800">8</div>
+                    <div class="text-sm text-gray-500" data-i18n="vision_boards">愿望板</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-xl font-bold text-indigo-600">12</div>
+                    <div class="text-sm text-gray-500" data-i18n="achievements">成就</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription -->
+        <div class="bg-white rounded-xl p-6 shadow-md mb-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="font-bold text-gray-800 mb-1" data-i18n="current_plan">当前方案</h3>
+                    <p class="text-indigo-600 font-medium" data-i18n="premium_plan">高级会员</p>
+                </div>
+                <button class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg text-sm font-medium" data-i18n="manage_subscription">管理订阅</button>
+            </div>
+            <div class="mt-4 bg-indigo-50 rounded-lg p-3 flex items-center">
+                <i class="fas fa-gift text-indigo-600 mr-3"></i>
+                <div>
+                    <p class="text-sm font-medium text-gray-800" data-i18n="subscription_expires">您的订阅将于2023年12月31日到期</p>
+                    <p class="text-xs text-gray-500" data-i18n="auto_renewal">已开启自动续费</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <h2 class="text-lg font-bold text-gray-800 mb-4" data-i18n="your_achievements">您的成就</h2>
+        
+        <div class="grid grid-cols-3 gap-4 mb-6">
+            <div class="text-center">
+                <div class="achievement-badge">
+                    <i class="fas fa-award text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="first_board">首个愿望板</h3>
+            </div>
+            <div class="text-center">
+                <div class="achievement-badge">
+                    <i class="fas fa-fire text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="seven_day_streak">连续7天</h3>
+            </div>
+            <div class="text-center">
+                <div class="achievement-badge">
+                    <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="first_goal">首个目标达成</h3>
+            </div>
+            <div class="text-center opacity-40">
+                <div class="achievement-badge bg-gray-400">
+                    <i class="fas fa-trophy text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="thirty_day_streak">连续30天</h3>
+            </div>
+            <div class="text-center opacity-40">
+                <div class="achievement-badge bg-gray-400">
+                    <i class="fas fa-medal text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="five_goals">5个目标达成</h3>
+            </div>
+            <div class="text-center opacity-40">
+                <div class="achievement-badge bg-gray-400">
+                    <i class="fas fa-crown text-white text-2xl"></i>
+                </div>
+                <h3 class="text-sm font-medium text-gray-800" data-i18n="board_master">愿望板达人</h3>
+            </div>
+        </div>
+
+        <!-- Settings -->
+        <div class="bg-white rounded-xl shadow-md mb-20 overflow-hidden">
+            <div class="divide-y divide-gray-200">
+                <a href="#" class="block p-4 hover:bg-gray-50">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-bell text-gray-400 w-6"></i>
+                            <span class="ml-3 text-gray-800" data-i18n="notifications">通知设置</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </a>
+                <a href="#" class="block p-4 hover:bg-gray-50">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-lock text-gray-400 w-6"></i>
+                            <span class="ml-3 text-gray-800" data-i18n="privacy">隐私设置</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </a>
+                <a href="#" class="block p-4 hover:bg-gray-50">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-gray-400 w-6"></i>
+                            <span class="ml-3 text-gray-800" data-i18n="language">语言</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-gray-500 mr-2" data-i18n="chinese">中文</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="block p-4 hover:bg-gray-50">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-question-circle text-gray-400 w-6"></i>
+                            <span class="ml-3 text-gray-800" data-i18n="help_support">帮助与支持</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400"></i>
+                    </div>
+                </a>
+                <a href="#" class="block p-4 hover:bg-gray-50">
+                    <div class="flex items-center text-red-500">
+                        <i class="fas fa-sign-out-alt w-6"></i>
+                        <span class="ml-3" data-i18n="logout">退出登录</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center px-2 py-3">
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="home">主页</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-search text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="explore">探索</span>
+        </a>
+        <a href="#" class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center -mt-5 shadow-lg">
+                <i class="fas fa-plus text-white text-xl"></i>
+            </div>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-chart-line text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="progress">进度</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-indigo-600">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="profile">我的</span>
+        </a>
+    </nav>
+
+    <script src="/js/ldjson-loader.js"></script>
+    <script src="/js/canonical-loader.js"></script>
+    <script src="/js/i18n.js"></script>
+    <script>
+        window.addEventListener('message', (event) => {
+          if (event.data && event.data.type === 'switch-lang' && event.data.lang) {
+            if (window.i18nInstance && typeof window.i18nInstance.switchLanguage === 'function') {
+              window.i18nInstance.switchLanguage(event.data.lang);
+            }
+          }
+        });
+    </script>
+</body>
+</html>

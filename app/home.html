@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vision Board Home - Track, record and realize your goals with AI inspiration and community support.">
+    <title data-i18n="home_title">Vision Board - 主页</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .tab-active {
+            color: #6366F1;
+            border-bottom: 2px solid #6366F1;
+        }
+        .vision-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .vision-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+            <h1 class="text-xl font-bold text-gray-800 mr-4" data-i18n="my_vision_boards">我的愿望板</h1>
+            <button class="bg-gray-200 text-gray-600 p-2 rounded-full">
+                <i class="fas fa-sliders-h"></i>
+            </button>
+        </div>
+        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full font-medium flex items-center shadow-md">
+            <i class="fas fa-plus mr-2"></i>
+            <span data-i18n="create_new">创建新的</span>
+        </button>
+    </header>
+
+    <div class="px-4 pt-4">
+        <div class="flex justify-between items-center mb-6">
+            <div class="text-xs font-medium text-gray-500 uppercase" data-i18n="total_boards">总共 8 个愿望板</div>
+            <div class="flex">
+                <button class="mr-2 p-2 bg-white rounded-full shadow-sm text-gray-500">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="p-2 bg-white rounded-full shadow-sm text-gray-500">
+                    <i class="fas fa-sort-amount-down"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex space-x-6 border-b border-gray-200 pb-3 mb-6 overflow-x-auto whitespace-nowrap">
+            <button class="tab-active px-1 py-2 font-medium text-sm" data-i18n="all_boards">全部</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="career">职业</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="health">健康</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="relationship">人际关系</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="travel">旅行</button>
+            <button class="text-gray-500 px-1 py-2 font-medium text-sm" data-i18n="wealth">财富</button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 pb-20">
+            <!-- Featured Vision Board -->
+            <div class="vision-card col-span-2 transition-all duration-300 relative bg-gradient-to-r from-purple-500 to-indigo-600">
+                <div class="absolute inset-0 opacity-20 bg-pattern"></div>
+                <div class="p-5 relative">
+                    <span class="inline-block px-2 py-1 bg-white bg-opacity-30 rounded-full text-xs text-white mb-3" data-i18n="featured">精选</span>
+                    <h3 class="text-white font-bold text-lg mb-1" data-i18n="career_goals">职业目标 2023</h3>
+                    <p class="text-white text-opacity-80 text-sm mb-3" data-i18n="last_viewed">上次查看: 今天</p>
+                    <div class="flex justify-between items-end">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                                <i class="fas fa-play text-indigo-600 text-xs"></i>
+                            </div>
+                            <span class="ml-2 text-white text-sm" data-i18n="view">查看</span>
+                        </div>
+                        <div class="flex space-x-1">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white bg-opacity-20">
+                                <i class="fas fa-image text-white text-xs"></i>
+                            </span>
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white bg-opacity-20">
+                                <i class="fas fa-music text-white text-xs"></i>
+                            </span>
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white bg-opacity-20">
+                                <i class="fas fa-microphone text-white text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Career Vision Board" class="w-full h-40 object-cover">
+            </div>
+
+            <!-- Regular Vision Boards -->
+            <div class="vision-card transition-all duration-300 bg-white">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Travel Vision Board" class="w-full h-32 object-cover">
+                <div class="p-3">
+                    <h3 class="font-semibold text-gray-800 mb-1" data-i18n="dream_travels">梦想旅行</h3>
+                    <p class="text-gray-500 text-xs mb-2" data-i18n="last_week">上次查看: 上周</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-play text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1">
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-image text-gray-400 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-card transition-all duration-300 bg-white">
+                <img src="https://images.unsplash.com/photo-1511174511562-5f7f18b874f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fitness Goals" class="w-full h-32 object-cover">
+                <div class="p-3">
+                    <h3 class="font-semibold text-gray-800 mb-1" data-i18n="fitness_goals">健身目标</h3>
+                    <p class="text-gray-500 text-xs mb-2" data-i18n="two_days_ago">上次查看: 2天前</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-play text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1">
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-image text-gray-400 text-xs"></i>
+                            </span>
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-music text-gray-400 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-card transition-all duration-300 bg-white">
+                <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Relationship Goals" class="w-full h-32 object-cover">
+                <div class="p-3">
+                    <h3 class="font-semibold text-gray-800 mb-1" data-i18n="relationship_goals">人际关系目标</h3>
+                    <p class="text-gray-500 text-xs mb-2" data-i18n="yesterday">上次查看: 昨天</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-play text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1">
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-image text-gray-400 text-xs"></i>
+                            </span>
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-microphone text-gray-400 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-card transition-all duration-300 bg-white">
+                <img src="https://images.unsplash.com/photo-1550565118-3a14e8d0386f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Financial Freedom" class="w-full h-32 object-cover">
+                <div class="p-3">
+                    <h3 class="font-semibold text-gray-800 mb-1" data-i18n="financial_freedom">财务自由</h3>
+                    <p class="text-gray-500 text-xs mb-2" data-i18n="three_days_ago">上次查看: 3天前</p>
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center">
+                                <i class="fas fa-play text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1">
+                            <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-100">
+                                <i class="fas fa-image text-gray-400 text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around items-center px-2 py-3">
+        <a href="#" class="flex flex-col items-center text-indigo-600">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="home">主页</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-search text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="explore">探索</span>
+        </a>
+        <a href="#" class="flex flex-col items-center">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center -mt-5 shadow-lg">
+                <i class="fas fa-plus text-white text-xl"></i>
+            </div>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-chart-line text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="progress">进度</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1" data-i18n="profile">我的</span>
+        </a>
+    </nav>
+
+    <script src="/js/ldjson-loader.js"></script>
+    <script src="/js/canonical-loader.js"></script>
+    <script src="/js/i18n.js"></script>
+    <script>
+        window.addEventListener('message', (event) => {
+          if (event.data && event.data.type === 'switch-lang' && event.data.lang) {
+            if (window.i18nInstance && typeof window.i18nInstance.switchLanguage === 'function') {
+              window.i18nInstance.switchLanguage(event.data.lang);
+            }
+          }
+        });
+    </script>
+</body>
+</html>

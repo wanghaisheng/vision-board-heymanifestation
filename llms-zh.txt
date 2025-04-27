@@ -1,0 +1,57 @@
+# Vision Board App - 网站完整介绍
+> Vision Board App 是一款专为显化方法和个人成长设计的多媒体愿望板应用，面向希望通过视觉化和科学方法实现目标的用户。支持多语言、移动端优先、社区互动和个性化定制，帮助用户高效、愉悦地实现梦想。
+
+## 网站背景
+Vision Board App 诞生于用户对专业显化工具的强烈需求。我们关注个人成长和目标实现领域，致力于用科技提升每个人的行动力。愿景是让显化变得科学、易用、有趣，并通过视觉、音频、社区等多维度体验，帮助用户持续专注于梦想，最终实现自我突破。
+
+## 主要网址说明（根据 sitemap.xml）
+- https://visionboard.heymanifestation.com
+  - 官网首页，介绍 Vision Board App 的核心理念、主要功能和用户价值。
+- https://visionboard.heymanifestation.com/app/home.html
+  - 用户的愿望板主页，展示个人愿望、目标进度和推荐内容。
+- https://visionboard.heymanifestation.com/app/profile.html
+  - 用户个人中心，管理资料、成就、订阅和隐私设置。
+- https://visionboard.heymanifestation.com/app/progress.html
+  - 目标进度追踪，科学记录和可视化用户的成长与实现路径。
+- https://visionboard.heymanifestation.com/app/community
+  - 社区互动区，用户可分享愿望、成功经验，参与挑战和讨论。
+- https://visionboard.heymanifestation.com/app/create
+  - 愿望板创建与编辑页面，支持多模板、多媒体、拖拽与自定义。
+- https://visionboard.heymanifestation.com/zh/app/home.html
+  - 中文版愿望板主页，内容与英文版同步，适配中文用户体验。
+- https://visionboard.heymanifestation.com/zh/app/profile.html
+  - 中文版个人中心。
+- https://visionboard.heymanifestation.com/zh/app/progress.html
+  - 中文版进度追踪。
+
+## 内容分类详情
+### [愿望板创建与管理](https://visionboard.heymanifestation.com/app/create)
+支持多模板、拖拽、图片/音频/语音等多媒体内容，帮助用户个性化定制愿望板。
+
+### [成长与进度追踪](https://visionboard.heymanifestation.com/app/progress.html)
+科学记录目标实现过程，数据可视化，激励用户持续行动。
+
+### [社区与灵感](https://visionboard.heymanifestation.com/app/community)
+用户可交流愿望、分享经验、参与挑战，获得更多灵感与支持。
+
+## 用户价值
+- 让显化变得科学、系统、可持续，提升目标实现率。
+- 提供多媒体沉浸体验，激发潜意识，增强行动力。
+- 支持多语言和个性化，适配全球用户。
+- 活跃社区，助力用户互相激励、共同成长。
+- 数据隐私与安全保障，用户信息自主可控。
+
+## 最新更新内容
+- 首页视频演示与 intro-en.html 页面联动，提升新用户引导体验。
+- SEO 动态 meta、alternate、ldjson 自动注入，全面优化搜索引擎友好度。
+- 支持 AI Scraper 友好的 robots.txt 及多语言 sitemap。
+- 新增批量结构化数据注入和多语言内容适配。
+
+### [首页](https://visionboard.heymanifestation.com)
+- 新增响应式视频演示，优化视觉吸引力。
+
+### [intro-en.html](https://visionboard.heymanifestation.com/intro-en.html)
+- 视频详细介绍页面，作为首页视频内容来源。
+
+### [sitemap.xml](https://visionboard.heymanifestation.com/sitemap.xml)
+- 支持多语言、动态检测和配置化，确保所有重要页面均被收录。

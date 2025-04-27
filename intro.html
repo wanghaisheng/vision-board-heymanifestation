@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description" content="AI-powered vision board platform for personal growth and goal achievement. Discover features and benefits.">
+  <title>Vision Board App Demo</title>
+  <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+  <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+  <button class="theme-btn" id="themeBtn" title="Switch Theme">🌓</button>
+  <div class="slideshow-container">
+    <div class="progress-bar" id="progressBar"></div>
+    <div class="slide active">
+      <div class="intro-q" data-i18n="intro_q">Is your dream still just an idea?</div>
+      <h1 class="slide-title" style="margin-bottom:0;" data-i18n="slide_title_main">Vision Board Manifestation App</h1>
+      <div class="slogan-anim" data-i18n="slogan_anim">Make Your Dreams Visible, Make Your Goals Real</div>
+      <img src="img/logo.svg" alt="Vision Board Logo" style="margin:32px auto 0;max-width:180px;display:block;" />
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_positioning">Product Positioning & Target Users</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_positioning">Everyone deserves a tool to achieve their dreams</h3>
+      <div class="user-story" data-i18n="user_story_newbie">
+        <b>Newbie's Dilemma:</b><br>
+        "I always lose motivation. I write down my goals but quickly forget them.<br>
+        Is there a tool that lets me see my dreams every day, adjust my goals anytime, and get encouragement from others?"
+      </div>
+      <ul style="margin-top:18px;">
+        <li data-i18n="target_users">Target Users: Personal growth seekers, goal managers, visual tool lovers</li>
+      </ul>
+      <img src="prototype-image-placeholder-users.png" alt="User Personas" />
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_competitors">Market Competitors & User Pain Points</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_competitors">Have you faced these challenges?</h3>
+      <div class="painpoint-card" data-i18n="painpoint_common">
+        <b>Common Pain Points:</b><br>
+        · Hard to stick to goals<br>
+        · No visual motivation, easy to forget<br>
+        · Lack of proven methods and community support
+      </div>
+      <img src="img/competitors.svg" alt="Competitors" style="margin:24px auto 0;max-width:340px;display:block;" />
+      <ul style="margin-top:18px;">
+        <li data-i18n="competitors">Competitors: Canva, Pinterest, Hay House Vision Board, Shuffles</li>
+      </ul>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_solution">Vision Board's Solution</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_solution">An All-in-One Manifestation Experience</h3>
+      <div class="solution-card" data-i18n="solution_innovations">
+        <b>Our Innovations:</b><br>
+        · Visual wish board, adjust goals anytime<br>
+        · Multimedia motivation: music, voice, video<br>
+        · Community interaction & scientific growth tracking
+      </div>
+      <img src="img/pain-solution.svg" alt="Pain Points & Solutions" style="margin:24px auto 0;max-width:340px;display:block;" />
+      <img src="prototype-image-placeholder-solution.png" alt="Pain Points & Solutions" />
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_features">Core Features Overview</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_features">Your Dream Realization Toolbox</h3>
+      <div class="featurelist">
+        <div class="feature-card" data-i18n="featurelist_0"><span class="feature-icon">🧩</span>Create/Edit Board<br><small>Templates, drag & drop, layers, history</small></div>
+        <div class="feature-card" data-i18n="featurelist_1"><span class="feature-icon">🎵</span>Multimedia Motivation<br><small>Music, voice, video generation</small></div>
+        <div class="feature-card" data-i18n="featurelist_2"><span class="feature-icon">🎨</span>Personalized Themes<br><small>Switch styles freely</small></div>
+        <div class="feature-card" data-i18n="featurelist_3"><span class="feature-icon">📈</span>Growth Tracking<br><small>Progress stats, trend analysis</small></div>
+        <div class="feature-card" data-i18n="featurelist_4"><span class="feature-icon">🤝</span>Community Interaction<br><small>Share, discuss, motivate</small></div>
+      </div>
+      <img src="img/feature-flow.svg" alt="Feature Flow" style="margin:24px auto 0;max-width:340px;display:block;" />
+      <div class="guide-arrow">⬇️</div>
+      <p style="margin-top:18px;color:#888;font-size:0.95em;" data-i18n="featurelist_hint">Click the thumbnails below to preview each interface</p>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_preview_home">Main Interface Preview · Home</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_preview_home">Follow the guide and try it out</h3>
+      <div class="slide-iframe">
+        <iframe src="app/home.html" title="Home Prototype"></iframe>
+        <div class="caption" data-i18n="preview_caption_home">Home Prototype (home.html)</div>
+      </div>
+      <div class="guide-arrow">⬇️</div>
+      <p style="margin-top:18px;color:#888;font-size:0.95em;" data-i18n="preview_hint_home">Interact with the home page and experience the real workflow</p>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_preview_create">Main Interface Preview · Create</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_preview_create">Follow the guide and try it out</h3>
+      <div class="slide-iframe">
+        <iframe src="app/create.html" title="Create Prototype"></iframe>
+        <div class="caption" data-i18n="preview_caption_create">Create Prototype (create.html)</div>
+      </div>
+      <div class="guide-arrow">⬇️</div>
+      <p style="margin-top:18px;color:#888;font-size:0.95em;" data-i18n="preview_hint_create">Interact with the creation page and experience the real workflow</p>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_preview_progress">Main Interface Preview · Progress</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_preview_progress">Follow the guide and try it out</h3>
+      <div class="slide-iframe">
+        <iframe src="app/progress.html" title="Progress Prototype"></iframe>
+        <div class="caption" data-i18n="preview_caption_progress">Progress Prototype (progress.html)</div>
+      </div>
+      <div class="guide-arrow">⬇️</div>
+      <p style="margin-top:18px;color:#888;font-size:0.95em;" data-i18n="preview_hint_progress">Interact with the progress page and experience the real workflow</p>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="dreamlist_title">Dream List · User Stories</h2>
+      <h3 class="slide-subtitle" data-i18n="dreamlist_subtitle">Achieve Dreams Together</h3>
+      <div class="dreamlist">
+        <div class="dream-card" data-i18n="dreamlist_0">Get into Grad School</div>
+        <div class="dream-card" data-i18n="dreamlist_1">Travel the World</div>
+        <div class="dream-card" data-i18n="dreamlist_2">100 Days of Fitness</div>
+        <div class="dream-card" data-i18n="dreamlist_3">Earn a Million</div>
+        <div class="dream-card" data-i18n="dreamlist_4">Write My First Book</div>
+      </div>
+      <img src="img/dream-list.svg" alt="Dream List" style="margin:20px auto 0;max-width:320px;display:block;" />
+      <p style="margin-top:18px;color:#888;font-size:0.96em;" data-i18n="dreamlist_hint">Vision Board makes your dreams visible and helps you progress every day</p>
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_community">Community & Growth</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_community">Grow Together, Stay Motivated</h3>
+      <div class="case-list">
+        <div class="case-card" data-i18n="community_cases_0">"Sharing my fitness goals in the community and receiving daily encouragement really kept me going!"</div>
+        <div class="case-card" data-i18n="community_cases_1">"The leaderboard feature helped me complete my annual reading challenge!"</div>
+      </div>
+      <img src="img/community.svg" alt="Community & Growth" style="margin:20px auto 0;max-width:320px;display:block;" />
+      <img src="prototype-image-placeholder-community.png" alt="Community Demo" />
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_future">Looking Ahead</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_future">The Future Is Full of Possibilities</h3>
+      <div class="case-list">
+        <div class="case-card" data-i18n="future_cases_0">"Looking forward to more AI-powered recommendations and auto-generated vision boards!"</div>
+        <div class="case-card" data-i18n="future_cases_1">"Hope to see more community events and themed challenges!"</div>
+      </div>
+      <img src="img/future.svg" alt="Future Vision" style="margin:20px auto 0;max-width:320px;display:block;" />
+      <img src="prototype-image-placeholder-future.png" alt="Future Vision" />
+    </div>
+    <div class="slide">
+      <h2 class="slide-title" data-i18n="slide_title_start">Start Your Journey</h2>
+      <h3 class="slide-subtitle" data-i18n="slide_subtitle_start">Begin Your Dream Adventure Now</h3>
+      <div class="case-card" style="margin: 0 auto 18px auto; max-width: 400px;" data-i18n="start_hint">Scan to try Vision Board and join our dreamers' community!</div>
+      <img src="img/qrcode.svg" alt="Try Vision Board QR" style="margin:20px auto 0;max-width:120px;display:block;" />
+      <img src="prototype-image-placeholder-contact.png" alt="Contact / QR" style="margin-bottom:18px;" />
+      <p style="color:#888;font-size:0.98em;" data-i18n="contact_hint">Questions, collaboration or feedback? Welcome!</p>
+    </div>
+  </div>
+  <script src="intro.js"></script>
+  <script src="/js/ldjson-loader.js"></script>
+  <script>
+    // 监听所有iframe加载完成后，发送切换语言的消息
+    function setIframesLang(lang) {
+      const iframes = document.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        // postMessage 发送语言切换指令
+        iframe.contentWindow && iframe.contentWindow.postMessage({ type: 'switch-lang', lang }, '*');
+      });
+    }
+    // 页面初始加载后，主动设置iframe语言为英文
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => setIframesLang('en'), 600); // 延迟确保iframe已加载
+    });
+    // 如果有切换语言按钮，也可在切换时调用 setIframesLang(lang)
+  </script>
+  <script src="/js/canonical-loader.js"></script>
+</body>
+</html>
