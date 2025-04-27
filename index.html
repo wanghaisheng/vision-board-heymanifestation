@@ -1045,8 +1045,8 @@
         var video = document.getElementById('intro-video');
         var source = document.getElementById('intro-video-source');
         var mp4Map = {
-          zh: '/media/zh/intro.mp4',
-          en: '/media/en/intor.mp4'
+          zh: '/media/zh/vision-board-app-demo.mp4',
+          en: '/media/vision-board-app-demo.mp4'
         };
         var src = mp4Map[locale] || mp4Map['zh'];
         source.src = src;
@@ -1065,7 +1065,7 @@
         var lang = getCurrentLang();
         var video = document.getElementById('demo-video');
         if (!video) return;
-        var src = (lang === 'zh') ? 'media/zh/vision-board-app-demo.mp4' : 'media/vision-board-demo.mp4';
+        var src = (lang === 'zh') ? '/media/zh/vision-board-app-demo.mp4' : '/media/vision-board-app-demo.mp4';
         // 先移除旧的 <source>，避免多余 source
         while (video.firstChild) video.removeChild(video.firstChild);
         var source = document.createElement('source');
